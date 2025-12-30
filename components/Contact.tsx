@@ -6,6 +6,7 @@ import { Reveal } from './Reveal';
 export const Contact: React.FC = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
@@ -17,7 +18,7 @@ export const Contact: React.FC = () => {
     try {
       const body = JSON.stringify({ name, email, subject, message });
       await fetch(
-        'https://script.google.com/macros/s/AKfycbwx5dL-IdjFBh4bVtvrP4MYd1di8imD5a-ob2h-hFon-N9vPm9exTIBqcsjg4-k3nuatg/exec', // ← THAY URL NÀY
+        'https://script.google.com/macros/s/AKfycbzOOb0g0YqPwCMJ7ojZOYBGu0VSeEaegrZ8J0uZ-F6l1rXznWWtioC5yWAdZyUh-MIYLw/exec', // ← THAY URL NÀY
         {
         method: 'POST',
         body,
@@ -115,6 +116,15 @@ export const Contact: React.FC = () => {
               />
             </div>
 
+            <input
+                type="tel"
+                placeholder="Số điện thoại"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                className="w-full bg-background border border-border rounded-lg px-4 py-4
+                text-black placeholder-black/40
+                focus:outline-none focus:border-accent transition"
+            />
             <input
               type="text"
               placeholder="Chủ đề"
