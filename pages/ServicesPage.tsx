@@ -155,22 +155,34 @@ export const ServicesPage: React.FC = () => {
   return (
     <div className="pt-24 pb-12 bg-background min-h-screen">
       {/* 1. HERO SECTION */}
-      <section className="px-6 py-20 bg-surface border-b border-border relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03]"></div>
-        <div className="max-w-7xl mx-auto text-center relative z-10">
-          <Reveal>
-            <span className="text-accent font-bold tracking-[0.2em] uppercase text-sm mb-4 block">Dịch vụ & Bảng giá</span>
-            <h1 className="text-5xl md:text-7xl font-display font-black text-primary mb-6">
-              Giải pháp minh bạch <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Hiệu quả tối đa.</span>
-            </h1>
-          </Reveal>
-          <Reveal delay={0.2}>
-            <p className="text-xl text-secondary max-w-2xl mx-auto">
-              Không có chi phí ẩn. Chọn gói dịch vụ phù hợp với giai đoạn phát triển của doanh nghiệp bạn.
-            </p>
-          </Reveal>
-        </div>
-      </section>
+      <section className="px-10 py-20 bg-surface border-b border-border relative overflow-hidden">
+  <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03]"></div>
+  
+  {/* Thay text-center thành text-left */}
+  <div className="max-w-7xl mx-auto text-left relative z-10">
+    <Reveal>
+      {/* Giữ block để text-sm mb-4 block hoạt động đúng */}
+      <span className="text-accent font-bold tracking-[0.2em] uppercase text-sm mb-4 block">
+        Dịch vụ & Bảng giá
+      </span>
+      
+      {/* Chữ sẽ tự động căn trái theo cha */}
+      <h1 className="text-5xl md:text-7xl font-display font-black text-primary mb-6">
+        Giải pháp minh bạch <br/> 
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+          Hiệu quả tối đa.
+        </span>
+      </h1>
+    </Reveal>
+
+    <Reveal delay={0.2}>
+      {/* Xóa mx-auto để đoạn văn không bị đẩy ra giữa */}
+      <p className="text-xl text-secondary max-w-2xl">
+        Không có chi phí ẩn. Chọn gói dịch vụ phù hợp với giai đoạn phát triển của doanh nghiệp bạn.
+      </p>
+    </Reveal>
+  </div>
+</section>
 
       {/* 2. DESIGN PRICING */}
       <Section>
@@ -223,7 +235,7 @@ export const ServicesPage: React.FC = () => {
       {/* 5. TOOLS & TECH STACK */}
       <Section className="bg-primary text-white">
         <Reveal>
-          <div className="text-center mb-16">
+          <div className="text-left mb-16">
             <h2 className="text-3xl font-display font-bold mb-4">Công cụ & Công nghệ</h2>
             <p className="text-white/70">Sử dụng những nền tảng tốt nhất để đảm bảo chất lượng</p>
           </div>
@@ -276,24 +288,31 @@ export const ServicesPage: React.FC = () => {
 
       {/* 7. BANNER CTA */}
       <section className="py-24 px-6">
-        <div className="max-w-7xl mx-auto bg-primary rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden">
-          {/* Decorative blobs */}
-          <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-accent/20 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
-          <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-500/20 rounded-full blur-[100px] pointer-events-none translate-x-1/2 translate-y-1/2"></div>
-          
-          <Reveal>
-            <h2 className="text-4xl md:text-6xl font-display font-black text-white mb-8 relative z-10">
-              Sẵn sàng nâng tầm <br/> thương hiệu?
-            </h2>
-            <p className="text-xl text-white/70 max-w-2xl mx-auto mb-12 relative z-10">
-              Đừng để ý tưởng chỉ nằm trên giấy. Hãy biến nó thành hiện thực ngay hôm nay.
-            </p>
-            <a href="/contact" className="inline-block px-10 py-5 bg-white text-primary text-lg font-bold rounded-full hover:bg-accent hover:text-white transition-all duration-300 transform hover:scale-105 shadow-xl relative z-10">
-              Nhận tư vấn miễn phí
-            </a>
-          </Reveal>
-        </div>
-      </section>
+  {/* Thêm flex flex-col items-center để đảm bảo khối con luôn ở giữa */}
+  <div className="max-w-7xl mx-auto bg-primary rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden flex flex-col items-center">
+    
+    {/* Decorative blobs */}
+    <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-accent/20 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
+    <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-500/20 rounded-full blur-[100px] pointer-events-none translate-x-1/2 translate-y-1/2"></div>
+    
+    <Reveal>
+      {/* Căn giữa Heading */}
+      <h2 className="text-4xl md:text-6xl font-display font-black text-white mb-8 relative z-10">
+        Sẵn sàng nâng tầm <br/> thương hiệu?
+      </h2>
+
+      {/* mx-auto trên p đảm bảo đoạn văn bản có giới hạn chiều rộng vẫn nằm giữa */}
+      <p className="text-xl text-white/70 max-w-2xl mx-auto mb-12 relative z-10">
+        Đừng để ý tưởng chỉ nằm trên giấy. Hãy biến nó thành hiện thực ngay hôm nay.
+      </p>
+
+      {/* Button đã có inline-block nên sẽ tuân theo text-center của cha */}
+      <a href="/contact" className="inline-block px-10 py-5 bg-white text-primary text-lg font-bold rounded-full hover:bg-accent hover:text-white transition-all duration-300 transform hover:scale-105 shadow-xl relative z-10">
+        Nhận tư vấn miễn phí
+      </a>
+    </Reveal>
+  </div>
+</section>
     </div>
   );
 };

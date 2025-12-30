@@ -116,22 +116,28 @@ export const LibraryPage: React.FC = () => {
         </div>
         
         {/* Content */}
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto pt-16">
-          <Reveal>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/20 border border-accent/30 text-accent-light text-sm font-bold uppercase tracking-wider mb-6 text-white backdrop-blur-md">
-              <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-              Knowledge Hub
-            </div>
-            <h1 className="text-4xl md:text-6xl font-display font-black text-white mb-6">
-              Thư viện Tin học
-            </h1>
-          </Reveal>
-          <Reveal delay={0.2}>
-            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-              Nơi chia sẻ kiến thức, tài nguyên và góc nhìn chuyên sâu về Lập trình, Thiết kế và Công nghệ.
-            </p>
-          </Reveal>
-        </div>
+        {/* Thêm flex flex-col items-center để buộc các component Reveal phải căn giữa */}
+<div className="relative z-10 text-center px-6 max-w-4xl mx-auto pt-16 flex flex-col items-center">
+  <Reveal>
+    {/* Badge Knowledge Hub */}
+    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/20 border border-accent/30 text-accent-light text-sm font-bold uppercase tracking-wider mb-6 text-white backdrop-blur-md">
+      <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+      Knowledge Hub
+    </div>
+    
+    {/* Tiêu đề chính */}
+    <h1 className="text-4xl md:text-6xl font-display font-black text-white mb-6">
+      Thư viện Tin học
+    </h1>
+  </Reveal>
+
+  <Reveal delay={0.2}>
+    {/* Đoạn mô tả: mx-auto kết hợp với max-w-2xl giúp căn giữa khối văn bản */}
+    <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+      Nơi chia sẻ kiến thức, tài nguyên và góc nhìn chuyên sâu về Lập trình, Thiết kế và Công nghệ.
+    </p>
+  </Reveal>
+</div>
       </div>
 
       <Section className="py-16 md:py-24">
