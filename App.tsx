@@ -7,6 +7,7 @@ import { Home } from './pages/Home';
 import { ServicesPage } from './pages/ServicesPage';
 import { AboutPage } from './pages/AboutPage';
 import { LibraryPage } from './pages/LibraryPage';
+import { ArticlePage } from './pages/Articlepage';
 import { ContactPage } from './pages/ContactPage';
 import { AdminLayout } from './pages/Admin/AdminLayout';
 import { AdminLogin } from './pages/Admin/AdminLogin';
@@ -49,6 +50,7 @@ function App() {
           <Route path="/about" element={<PublicLayout><AboutPage /></PublicLayout>} />
           <Route path="/services" element={<PublicLayout><ServicesPage /></PublicLayout>} />
           <Route path="/library" element={<PublicLayout><LibraryPage /></PublicLayout>} />
+          <Route path="/library/:id" element={<PublicLayout><ArticlePage /></PublicLayout>} />
           <Route path="/contact" element={<PublicLayout><ContactPage /></PublicLayout>} />
           
           {/* Dynamic User Created Pages (No default Header/Footer, full control) */}

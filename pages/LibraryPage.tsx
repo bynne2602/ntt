@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Section } from '../components/Section';
 import { Reveal } from '../components/Reveal';
 import { Search, Clock, ChevronRight, Tag, User, TrendingUp } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface Resource {
   id: string;
@@ -23,6 +24,18 @@ export const LibraryPage: React.FC = () => {
   const resources: Resource[] = [
     {
       id: '1',
+      title: 'Review Top 5 Phần mềm tạo ảnh bằng AI (AI Art) đỉnh cao 2024',
+      category: 'Tools',
+      desc: 'Phân tích ưu nhược điểm của Midjourney, Stable Diffusion, DALL-E 3... và tìm hiểu về 26CreatFlow - giải pháp tích hợp AI vào quy trình thiết kế chuyên nghiệp.',
+      url: '/library/top-5-phan-mem-tao-anh-bang-ai',
+      date: '22/05/2024',
+      readTime: '12 phút đọc',
+      author: 'Nguyễn Tân Thành',
+      image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop',
+      tags: ['AI Art', 'Midjourney', 'Design Tools']
+    },
+    {
+      id: '1',
       title: 'Lộ trình học ReactJS từ cơ bản đến nâng cao 2024',
       category: 'Development',
       desc: 'Tổng hợp các nguồn tài liệu, khóa học và dự án mẫu để làm chủ ReactJS trong 3 tháng. Bao gồm Hooks, Context và Redux.',
@@ -42,7 +55,7 @@ export const LibraryPage: React.FC = () => {
       date: '05/05/2024',
       readTime: '5 phút đọc',
       author: 'Nguyễn Tân Thành',
-      image: 'https://images.unsplash.com/photo-1648854006531-361649aa182c?q=80&w=1974&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop',
       tags: ['Figma', 'UI Kit', 'Freebie']
     },
     {
@@ -66,7 +79,7 @@ export const LibraryPage: React.FC = () => {
       date: '15/04/2024',
       readTime: '20 phút đọc',
       author: 'Nguyễn Tân Thành',
-      image: 'https://images.unsplash.com/photo-1686061594183-8c864f508b00?q=80&w=2070&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1571721795195-a2ca2d337096?q=80&w=2070&auto=format&fit=crop',
       tags: ['Next.js', 'SEO', 'Web Vitals']
     },
     {
@@ -96,7 +109,7 @@ export const LibraryPage: React.FC = () => {
   ];
 
   const categories = ['All', 'Development', 'Design', 'Tools', 'Business'];
-  const popularTags = ['React', 'Figma', 'SEO', 'UI/UX', 'JavaScript', 'Career', 'Freelance'];
+  const popularTags = ['React', 'Figma', 'AI Art', 'SEO', 'UI/UX', 'JavaScript', 'Career'];
 
   const filteredResources = resources.filter(item => {
     const matchesFilter = filter === 'All' || item.category === filter;
@@ -116,28 +129,22 @@ export const LibraryPage: React.FC = () => {
         </div>
         
         {/* Content */}
-        {/* Thêm flex flex-col items-center để buộc các component Reveal phải căn giữa */}
-<div className="relative z-10 text-center px-6 max-w-4xl mx-auto pt-16 flex flex-col items-center">
-  <Reveal>
-    {/* Badge Knowledge Hub */}
-    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/20 border border-accent/30 text-accent-light text-sm font-bold uppercase tracking-wider mb-6 text-white backdrop-blur-md">
-      <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-      Knowledge Hub
-    </div>
-    
-    {/* Tiêu đề chính */}
-    <h1 className="text-4xl md:text-6xl font-display font-black text-white mb-6">
-      Thư viện Tin học
-    </h1>
-  </Reveal>
-
-  <Reveal delay={0.2}>
-    {/* Đoạn mô tả: mx-auto kết hợp với max-w-2xl giúp căn giữa khối văn bản */}
-    <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-      Nơi chia sẻ kiến thức, tài nguyên và góc nhìn chuyên sâu về Lập trình, Thiết kế và Công nghệ.
-    </p>
-  </Reveal>
-</div>
+        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto pt-16">
+          <Reveal>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/20 border border-accent/30 text-accent-light text-sm font-bold uppercase tracking-wider mb-6 text-white backdrop-blur-md">
+              <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+              Knowledge Hub
+            </div>
+            <h1 className="text-4xl md:text-6xl font-display font-black text-white mb-6">
+              Thư viện Tin học
+            </h1>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+              Nơi chia sẻ kiến thức, tài nguyên và góc nhìn chuyên sâu về Lập trình, Thiết kế và Công nghệ.
+            </p>
+          </Reveal>
+        </div>
       </div>
 
       <Section className="py-16 md:py-24">
@@ -146,26 +153,25 @@ export const LibraryPage: React.FC = () => {
           {/* 2. Main Content (Left Column) */}
           <div className="lg:col-span-8">
             <Reveal>
-  <div className="flex flex-col mb-8 border-b border-border pb-4 gap-2">
-    <h2 className="text-2xl font-bold text-primary flex items-center gap-2">
-      <TrendingUp className="text-accent" />
-      Bài viết mới nhất
-    </h2>
-
-    <span className="text-sm text-secondary">
-      Hiển thị {filteredResources.length} kết quả
-    </span>
-  </div>
-</Reveal>
-
+              <div className="flex items-center justify-between mb-8 border-b border-border pb-4">
+                <h2 className="text-2xl font-bold text-primary flex items-center gap-2">
+                  <TrendingUp className="text-accent" />
+                  Bài viết mới nhất
+                </h2>
+                <span className="text-sm text-secondary">Hiển thị {filteredResources.length} kết quả</span>
+              </div>
+            </Reveal>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {filteredResources.length > 0 ? (
-                filteredResources.map((item, idx) => (
-                  <Reveal key={item.id} delay={idx * 0.05} width="100%" className="h-full">
-                    <article className="group h-full bg-surface border border-border rounded-2xl overflow-hidden hover:border-accent transition-all duration-300 hover:shadow-xl hover:shadow-black/5 flex flex-col">
+                filteredResources.map((item, idx) => {
+                  const isInternal = item.url.startsWith('/');
+                  
+                  // Helper content to prevent code duplication
+                  const CardContent = () => (
+                    <>
                       {/* Thumbnail */}
-                      <a href={item.url} className="block relative aspect-video overflow-hidden">
+                      <div className="block relative aspect-video overflow-hidden">
                         <img 
                           src={item.image} 
                           alt={item.title} 
@@ -174,7 +180,7 @@ export const LibraryPage: React.FC = () => {
                         <div className="absolute top-4 left-4 bg-white/90 backdrop-blur text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
                           {item.category}
                         </div>
-                      </a>
+                      </div>
 
                       {/* Content */}
                       <div className="p-6 flex flex-col flex-1">
@@ -185,7 +191,7 @@ export const LibraryPage: React.FC = () => {
                         </div>
 
                         <h3 className="text-xl font-bold text-primary mb-3 line-clamp-2 group-hover:text-accent transition-colors leading-tight">
-                          <a href={item.url}>{item.title}</a>
+                          {item.title}
                         </h3>
                         
                         <p className="text-secondary text-sm mb-6 line-clamp-3 flex-1 leading-relaxed">
@@ -200,14 +206,30 @@ export const LibraryPage: React.FC = () => {
                               </div>
                               <span className="text-xs font-bold text-primary">{item.author}</span>
                            </div>
-                           <a href={item.url} className="text-accent text-sm font-bold flex items-center gap-1 group/link">
+                           <span className="text-accent text-sm font-bold flex items-center gap-1 group/link">
                              Đọc thêm <ChevronRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
-                           </a>
+                           </span>
                         </div>
                       </div>
-                    </article>
-                  </Reveal>
-                ))
+                    </>
+                  );
+
+                  return (
+                    <Reveal key={item.id} delay={idx * 0.05} width="100%" className="h-full">
+                      <article className="group h-full bg-surface border border-border rounded-2xl overflow-hidden hover:border-accent transition-all duration-300 hover:shadow-xl hover:shadow-black/5 flex flex-col">
+                        {isInternal ? (
+                          <Link to={item.url} className="h-full flex flex-col">
+                            <CardContent />
+                          </Link>
+                        ) : (
+                          <a href={item.url} className="h-full flex flex-col">
+                             <CardContent />
+                          </a>
+                        )}
+                      </article>
+                    </Reveal>
+                  );
+                })
               ) : (
                 <div className="col-span-full py-20 text-center bg-surface rounded-3xl border border-border border-dashed">
                    <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center text-gray-400 mx-auto mb-4">
