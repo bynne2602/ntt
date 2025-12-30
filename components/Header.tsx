@@ -33,7 +33,7 @@ export const Header: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           <Link to="/" className="group inline-flex items-center">
   <img
-    src="src/assets/logo.png"
+    src="assets/logo.png"
     alt="NTT Logo"
     className="h-8 w-auto transition-opacity group-hover:opacity-80"
   />
