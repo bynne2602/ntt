@@ -26,7 +26,7 @@ export const Hero: React.FC = () => {
                  NGUYỄN<br/>TÂN THÀNH<span className="text-accent">.</span>
                </h1>
                <p className="text-lg text-secondary max-w-md font-medium">
-                 Graphic Designer & Web Developer. <br/>
+                 Creative Technologist. <br/>
                  Kết hợp tư duy thẩm mỹ và giải pháp kỹ thuật số.
                </p>
             </div>
