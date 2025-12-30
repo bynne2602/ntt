@@ -17,7 +17,7 @@ export const Contact: React.FC = () => {
     try {
       const body = JSON.stringify({ name, email, subject, message });
       await fetch(
-        'https://script.google.com/macros/s/AKfycbwZkaf1MZdul4n-P8Gz9BS7Lxf1ncO8DxNy7UFAyBe7GDEWznvve50HW9d4ol0OPMaUQQ/exec', // ← THAY URL NÀY
+        'https://script.google.com/macros/s/AKfycbwx5dL-IdjFBh4bVtvrP4MYd1di8imD5a-ob2h-hFon-N9vPm9exTIBqcsjg4-k3nuatg/exec', // ← THAY URL NÀY
         {
         method: 'POST',
         body,
