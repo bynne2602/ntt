@@ -10,8 +10,12 @@ export const Contact: React.FC = () => {
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
+    const [showSuccess, setShowSuccess] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const SCRIPT_URL =
+  'https://script.google.com/macros/s/AKfycbxOuPkyAPqlV1YSgZ4jrKliZa0zDk4fryJSZr_8kC9dpogfruEoWAMfCnU9NqI0B0Wf1Q/exec';
+
+const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
   setLoading(true);
 
@@ -19,18 +23,15 @@ export const Contact: React.FC = () => {
     const body = new URLSearchParams();
     body.append('name', name);
     body.append('email', email);
-    body.append('phone', phone); // ← DÒNG QUYẾT ĐỊNH
+    body.append('phone', phone);
     body.append('subject', subject);
     body.append('message', message);
-    body.append('source', 'portfolio');
 
-    await fetch(
-      'https://script.google.com/macros/s/AKfycbzseeQkzAwFjgMs0tjZe_G4NUMVg6GUCDcpXDaWbVUON7qm7bQIzgqJkVE-H_svCk_7xw/exec',
-      {
-        method: 'POST',
-        body,
-      }
-    );
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      body,
+      mode: 'no-cors',
+    });
 
     setName('');
     setEmail('');
@@ -38,8 +39,10 @@ export const Contact: React.FC = () => {
     setSubject('');
     setMessage('');
 
-    alert('Gửi thành công!');
+    setShowSuccess(true);
+    setTimeout(() => setShowSuccess(false), 3000);
   } catch (err) {
+    console.error(err);
     alert('Có lỗi xảy ra. Vui lòng thử lại.');
   } finally {
     setLoading(false);
@@ -173,6 +176,24 @@ export const Contact: React.FC = () => {
         </Reveal>
 
       </div>
+      {showSuccess && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+    <div className="bg-white rounded-2xl p-8 text-center max-w-sm w-full">
+      <h3 className="text-2xl font-bold mb-3 text-primary">
+        Gửi thành công
+      </h3>
+      <p className="text-secondary mb-6">
+        Cảm ơn bạn đã liên hệ. Tôi sẽ phản hồi sớm.
+      </p>
+      <button
+        onClick={() => setShowSuccess(false)}
+        className="bg-accent text-white px-6 py-3 rounded-lg font-semibold"
+      >
+        Đóng
+      </button>
+    </div>
+  </div>
+)}
     </Section>
   );
 };
