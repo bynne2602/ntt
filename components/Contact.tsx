@@ -15,36 +15,26 @@ export const Contact: React.FC = () => {
     setLoading(true);
 
     try {
+      const body = JSON.stringify({ name, email, subject, message });
       await fetch(
         'https://script.google.com/macros/s/AKfycbwZkaf1MZdul4n-P8Gz9BS7Lxf1ncO8DxNy7UFAyBe7GDEWznvve50HW9d4ol0OPMaUQQ/exec', // ← THAY URL NÀY
         {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            name,
-            email,
-            subject,
-            message,
-            source: 'portfolio',
-          }),
-        }
-      );
+        method: 'POST',
+        body,
+      }
+    );
 
-      // Reset form
-      setName('');
-      setEmail('');
-      setSubject('');
-      setMessage('');
-
-      alert('Gửi thành công! Tôi sẽ liên hệ sớm.');
-    } catch (error) {
-      alert('Có lỗi xảy ra. Vui lòng thử lại.');
-    } finally {
-      setLoading(false);
-    }
-  };
+    setName('');
+    setEmail('');
+    setSubject('');
+    setMessage('');
+    alert('Gửi thành công!');
+  } catch (err) {
+    alert('Có lỗi xảy ra. Vui lòng thử lại.');
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <Section id="contact" className="bg-background">
