@@ -42,13 +42,13 @@ export const Hero: React.FC = () => {
         {/* 2. Image/Visual (2x2) */}
         <div className="md:col-span-2 md:row-span-2 relative rounded-3xl overflow-hidden group h-[300px] md:h-full border border-border">
            <img 
-             src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2670&auto=format&fit=crop" 
+             src="src/image/hero-image.jpg"
              alt="Workspace" 
              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
            />
            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex items-end p-8">
               <Reveal delay={0.3}>
-                <p className="text-white font-medium italic border-l-2 border-accent pl-4">"Design Không chỉ thu hút ánh nhìn, mà còn tạo ra chuyển đổi."</p>
+                <p className="text-white font-medium italic border-l-2 border-accent pl-4">"Không phải ai làm cũng hiểu mình đang làm gì."</p>
               </Reveal>
            </div>
         </div>

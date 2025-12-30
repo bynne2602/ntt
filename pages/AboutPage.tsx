@@ -32,24 +32,29 @@ export const AboutPage: React.FC = () => {
   ];
 
   return (
-    <div className="pt-24 pb-12">
-      {/* Hero Header */}
-      <section className="px-6 py-20 bg-surface border-b border-border">
-        <div className="max-w-4xl mx-auto text-center">
-          <Reveal>
-            <span className="text-accent font-bold tracking-[0.2em] uppercase text-sm mb-4 block">Hành trình & Kinh nghiệm</span>
-            <h1 className="text-5xl md:text-7xl font-display font-black text-primary mb-6">
-              Tôi là ai?
-            </h1>
-          </Reveal>
-          <Reveal delay={0.2}>
-            <p className="text-xl text-secondary leading-relaxed">
-              Một người đam mê cầu nối giữa <span className="text-primary font-bold">nghệ thuật thị giác</span> và <span className="text-primary font-bold">tư duy logic</span>. 
-              Tôi không chỉ tạo ra những sản phẩm đẹp, mà còn tối ưu hóa chúng để mang lại giá trị thực tế cho doanh nghiệp.
-            </p>
-          </Reveal>
-        </div>
-      </section>
+    <div className="pt-[72px] pb-12">
+
+      <section className="bg-surface border-b border-border">
+  <div className="max-w-7xl mx-auto pt-40 pb-40">
+    <Reveal>
+      <span className="text-accent font-bold tracking-[0.2em] uppercase text-sm mb-4 block">
+        Hành trình & Kinh nghiệm
+      </span>
+      <h1 className="text-5xl md:text-7xl font-display font-black text-primary mb-6">
+        Tôi là ai?
+      </h1>
+    </Reveal>
+
+    <Reveal delay={0.2}>
+      <p className="text-xl text-secondary leading-relaxed max-w-3xl">
+        Một người đam mê cầu nối giữa{" "}
+        <span className="text-primary font-bold">nghệ thuật thị giác</span> và{" "}
+        <span className="text-primary font-bold">tư duy logic</span>.
+        Tôi không chỉ tạo ra những sản phẩm đẹp, mà còn tối ưu hóa chúng để mang lại giá trị thực tế cho doanh nghiệp.
+      </p>
+    </Reveal>
+  </div>
+</section>
 
       {/* Philosophy Section */}
       <Section className="bg-background">
@@ -113,34 +118,58 @@ export const AboutPage: React.FC = () => {
         </div>
       </Section>
 
-      {/* Skills Grid */}
-      <Section>
-        <Reveal>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-display font-bold text-primary mb-4">Kỹ năng chuyên môn</h2>
+     <Section>
+  <div className="max-w-[1400px] mx-auto px-4">
+    <Reveal>
+      <div className="mb-16">
+        <span className="text-accent uppercase tracking-[0.25em] text-sm font-bold block mb-3">
+          Expertise
+        </span>
+        <h2 className="text-4xl font-display font-black text-primary tracking-tight">
+          Kỹ năng chuyên môn
+        </h2>
+      </div>
+    </Reveal>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-x-2 gap-y-8">
+      {skills.map((skill, idx) => (
+        <Reveal key={idx} delay={idx * 0.1} className="h-full" fullHeight>
+          <div
+            className="
+              h-full p-10 rounded-[28px]
+              bg-surface border border-border
+              transition-all duration-300
+              hover:border-accent
+              hover:-translate-y-1
+              hover:shadow-[0_24px_48px_rgba(0,0,0,0.08)]
+              flex flex-col
+            "
+          >
+            <div className="w-16 h-16 rounded-2xl bg-background border border-border flex items-center justify-center text-primary mb-8">
+              {skill.icon}
+            </div>
+
+            <h3 className="text-2xl font-bold text-primary mb-6">
+              {skill.category}
+            </h3>
+
+            <ul className="space-y-3 flex-grow">
+              {skill.items.map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="mt-2 w-2.5 h-2.5 rounded-full bg-accent"></span>
+                  <span className="text-secondary text-lg leading-relaxed">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
         </Reveal>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-          {skills.map((skill, idx) => (
-            <Reveal key={idx} delay={idx * 0.1} className="h-full" fullHeight>
-              <div className="h-full p-8 border border-border rounded-3xl bg-surface hover:border-accent transition-colors flex flex-col">
-                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-primary mb-6 shadow-sm">
-                  {skill.icon}
-                </div>
-                <h3 className="text-xl font-bold text-primary mb-6">{skill.category}</h3>
-                <div className="space-y-3 flex-grow">
-                  {skill.items.map((item, i) => (
-                    <div key={i} className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-accent"></div>
-                      <span className="text-secondary">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </Section>
+      ))}
+    </div>
+  </div>
+</Section>
+
     </div>
   );
 };

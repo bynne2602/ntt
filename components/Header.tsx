@@ -31,9 +31,14 @@ export const Header: React.FC = () => {
     <>
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-4 bg-background/80 backdrop-blur-md border-b border-border' : 'py-6 bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          <Link to="/" className="text-2xl font-display font-black tracking-tight text-primary group">
-            NTT<span className="text-accent group-hover:text-black transition-colors">.</span>
-          </Link>
+          <Link to="/" className="group inline-flex items-center">
+  <img
+    src="src/assets/logo.png"
+    alt="NTT Logo"
+    className="h-8 w-auto transition-opacity group-hover:opacity-80"
+  />
+</Link>
+
 
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map(link => (
