@@ -42,7 +42,7 @@ export const Hero: React.FC = () => {
         {/* 2. Image/Visual (2x2) */}
         <div className="md:col-span-2 md:row-span-2 relative rounded-3xl overflow-hidden group h-[300px] md:h-full border border-border">
            <img 
-             src="src/image/hero-image.jpg"
+             src="/hero-image.jpg"
              alt="Workspace" 
              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
            />

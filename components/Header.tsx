@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
+
+
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -33,7 +35,7 @@ export const Header: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           <Link to="/" className="group inline-flex items-center">
   <img
-    src="assets/logo.png"
+    src="/logo.png"
     alt="NTT Logo"
     className="h-8 w-auto transition-opacity group-hover:opacity-80"
   />
