@@ -25,7 +25,7 @@ export const Contact: React.FC = () => {
     body.append('source', 'portfolio');
 
     await fetch(
-      'https://script.google.com/macros/s/AKfycbzOOb0g0YqPwCMJ7ojZOYBGu0VSeEaegrZ8J0uZ-F6l1rXznWWtioC5yWAdZyUh-MIYLw/exec',
+      'https://script.google.com/macros/s/AKfycbzseeQkzAwFjgMs0tjZe_G4NUMVg6GUCDcpXDaWbVUON7qm7bQIzgqJkVE-H_svCk_7xw/exec',
       {
         method: 'POST',
         body,
