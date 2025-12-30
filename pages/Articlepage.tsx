@@ -101,6 +101,212 @@ const articlesData: Record<string, any> = {
       </>
     )
   },
+  'prompt-engineering-101': {
+    title: 'Prompt Engineering cơ bản cho người mới: Công thức làm chủ AI',
+    category: 'Ai',
+    date: '25/05/2024',
+    readTime: '10 phút đọc',
+    author: 'Nguyễn Tân Thành',
+    tags: ['AI', 'Prompt Engineering', 'ChatGPT', 'Education'],
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop',
+    content: (
+      <>
+        <p className="lead text-xl text-secondary mb-8 font-medium border-l-4 border-accent pl-4">
+          Bạn đã bao giờ hỏi ChatGPT một câu và nhận lại câu trả lời vô thưởng vô phạt? Vấn đề không nằm ở AI, mà nằm ở cách bạn đặt câu hỏi. Chào mừng bạn đến với thế giới của Prompt Engineering - kỹ năng quan trọng nhất trong kỷ nguyên AI.
+        </p>
+
+        <h2 className="text-2xl font-bold text-primary mt-12 mb-4">1. Prompt Engineering là gì?</h2>
+        <img src="https://plus.unsplash.com/premium_photo-1725985758256-2b311864d1ad?q=80&w=2000&auto=format&fit=crop" alt="Prompt Engineering" className="w-full rounded-2xl mb-4 shadow-lg" />
+        <p className="text-secondary mb-4 leading-relaxed">
+          Hiểu đơn giản, Prompt Engineering là nghệ thuật "ra lệnh" cho AI. Nó giống như việc bạn giao việc cho một nhân viên tập sự cực kỳ thông minh nhưng... thiếu kiến thức xã hội. Nếu bạn giao việc chung chung, kết quả sẽ chung chung. Nếu bạn giao việc chi tiết, kết quả sẽ xuất sắc.
+        </p>
+
+        <h2 className="text-2xl font-bold text-primary mt-12 mb-4">2. Công thức vàng: R-T-C-F</h2>
+        <img src="https://easyaibeginner.com/wp-content/uploads/a_digital_illustration_featuring_Role_Task_Format_3-1024x683.jpg?q=80&w=2000&auto=format&fit=crop" alt="Prompt Engineering" className="w-full rounded-2xl mb-4 shadow-lg" />
+        <p className="text-secondary mb-4 leading-relaxed">
+          Để viết một prompt tốt, hãy nhớ công thức <strong>R-T-C-F</strong> (Role - Task - Context - Format).
+        </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+           <div className="bg-surface p-6 rounded-2xl border border-border">
+              <h4 className="font-bold text-primary mb-2 text-lg">R - Role (Vai trò)</h4>
+              <p className="text-secondary text-sm">Hãy gán cho AI một chuyên môn cụ thể.</p>
+              <p className="text-accent text-sm mt-2 italic">VD: "Bạn là một chuyên gia Marketing với 10 năm kinh nghiệm..."</p>
+           </div>
+           <div className="bg-surface p-6 rounded-2xl border border-border">
+              <h4 className="font-bold text-primary mb-2 text-lg">T - Task (Nhiệm vụ)</h4>
+              <p className="text-secondary text-sm">Mô tả chính xác việc cần làm bằng động từ mạnh.</p>
+              <p className="text-accent text-sm mt-2 italic">VD: "Hãy viết 5 tiêu đề quảng cáo Facebook bắt trend..."</p>
+           </div>
+           <div className="bg-surface p-6 rounded-2xl border border-border">
+              <h4 className="font-bold text-primary mb-2 text-lg">C - Context (Bối cảnh)</h4>
+              <p className="text-secondary text-sm">Cung cấp thông tin nền, đối tượng mục tiêu.</p>
+              <p className="text-accent text-sm mt-2 italic">VD: "Sản phẩm là giày chạy bộ cho nam giới văn phòng..."</p>
+           </div>
+           <div className="bg-surface p-6 rounded-2xl border border-border">
+              <h4 className="font-bold text-primary mb-2 text-lg">F - Format (Định dạng)</h4>
+              <p className="text-secondary text-sm">Quy định hình thức đầu ra mong muốn.</p>
+              <p className="text-accent text-sm mt-2 italic">VD: "Trình bày dưới dạng bảng so sánh, giọng văn hài hước."</p>
+           </div>
+        </div>
+
+        <h2 className="text-2xl font-bold text-primary mt-12 mb-4">3. Ví dụ thực tế: Trước và Sau</h2>
+        <img src="https://769audio.vn/upload/Cach_Vit_Prompt_AI.jpg?q=80&w=2000&auto=format&fit=crop" alt="Prompt Engineering Example" className="w-full rounded-2xl mb-4 shadow-lg" />
+        <div className="space-y-4 mb-8">
+          <div className="bg-red-50 p-6 rounded-2xl border border-red-100">
+             <div className="flex items-center gap-2 mb-2">
+                <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                <span className="font-bold text-red-700 uppercase text-xs">Prompt tồi</span>
+             </div>
+             <p className="text-primary font-medium">"Viết cho tôi bài đăng Facebook bán giày."</p>
+             <p className="text-secondary text-sm mt-2">→ Kết quả: Một bài viết chung chung, sáo rỗng, không có điểm nhấn.</p>
+          </div>
+
+          <div className="bg-green-50 p-6 rounded-2xl border border-green-100">
+             <div className="flex items-center gap-2 mb-2">
+                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                <span className="font-bold text-green-700 uppercase text-xs">Prompt tốt (Áp dụng R-T-C-F)</span>
+             </div>
+             <p className="text-primary font-medium">
+               "Đóng vai Copywriter chuyên nghiệp (Role). Viết một bài đăng Facebook (Task) để bán dòng giày sneaker mới cho sinh viên Gen Z, tập trung vào yếu tố giá rẻ và thiết kế trendy (Context). Sử dụng ngôn ngữ trẻ trung, nhiều emoji và kết thúc bằng một câu kêu gọi hành động (Format)."
+             </p>
+             <p className="text-secondary text-sm mt-2">→ Kết quả: Một bài viết đúng insight, giọng văn phù hợp và tỷ lệ chuyển đổi cao hơn.</p>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold text-primary mt-12 mb-4">4. Kỹ thuật nâng cao: Few-Shot Prompting</h2>
+        <img src="https://objectways.com/wp-content/uploads/2025/06/few-shot-prompting-1024x474.webp?q=80&w=2000&auto=format&fit=crop" alt="Prompt Engineering" className="w-full rounded-2xl mb-4 shadow-lg" />
+        <p className="text-secondary mb-4 leading-relaxed">
+          Đôi khi AI vẫn không hiểu ý bạn dù đã mô tả kỹ. Lúc này hãy dùng kỹ thuật "Few-Shot" (Cung cấp ví dụ mẫu).
+        </p>
+        <div className="bg-surface p-6 rounded-2xl border border-border font-mono text-sm text-secondary">
+           <p>Hãy chuyển đổi tên sản phẩm sang dạng chuẩn SEO.</p>
+           <p className="mt-2 text-primary">Ví dụ 1:</p>
+           <p>Input: iphone 15 pro max 256gb màu đen</p>
+           <p>Output: Điện thoại iPhone 15 Pro Max 256GB - Màu Đen Titan</p>
+           <p className="mt-2 text-primary">Ví dụ 2:</p>
+           <p>Input: samsung s24 ultra xám</p>
+           <p>Output: Điện thoại Samsung Galaxy S24 Ultra - Màu Xám Titan</p>
+           <p className="mt-4 text-accent font-bold">Input của tôi: macbook air m2 8gb 256</p>
+           <p className="text-accent font-bold">Output: ???</p>
+        </div>
+        <p className="text-secondary mt-4 leading-relaxed">
+          Bằng cách đưa cho AI 1-2 ví dụ (shots), nó sẽ học được quy luật (pattern) và trả về kết quả chính xác cho input mới của bạn.
+        </p>
+
+        <h3 className="text-xl font-bold text-primary mt-8 mb-4">Lời kết</h3>
+        <p className="text-secondary leading-relaxed">
+          Prompt Engineering không phải là học thuộc lòng các câu lệnh. Nó là việc rèn luyện tư duy logic và khả năng diễn đạt mạch lạc. Hãy bắt đầu thực hành ngay hôm nay với công thức R-T-C-F, bạn sẽ thấy sự khác biệt!
+        </p>
+      </>
+    )
+  },
+  '5': {
+    title: 'Nguyên lý màu sắc trong thiết kế UI: Từ lý thuyết đến thực chiến',
+    category: 'Design',
+    date: '10/04/2024',
+    readTime: '12 phút đọc',
+    author: 'Design Lab',
+    tags: ['Color Theory', 'UI Design', 'UX', 'Accessibility'],
+    image: 'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2070&auto=format&fit=crop',
+    content: (
+      <>
+        <p className="lead text-xl text-secondary mb-8 font-medium border-l-4 border-accent pl-4">
+          Màu sắc không chỉ là yếu tố trang trí. Trong UI Design, màu sắc điều hướng mắt người dùng, tạo cảm xúc và xây dựng hệ thống phân cấp thông tin. Nếu bạn thấy thiết kế của mình "thiếu thiếu" gì đó, 90% là do cách phối màu chưa chuẩn.
+        </p>
+        <img src="https://images.unsplash.com/photo-1716471330459-063b3baf247e?q=80&w=2000&auto=format&fit=crop" alt="Color Theory" className="w-full rounded-2xl mb-4 shadow-lg" />
+        <h2 className="text-2xl font-bold text-primary mt-12 mb-4">1. Quy luật 60-30-10: Tỉ lệ vàng</h2>
+        <p className="text-secondary mb-4 leading-relaxed">
+          Đây là quy tắc kinh điển nhất để tạo sự cân bằng trong bố cục. Hãy chia bảng màu của bạn thành 3 phần:
+        </p>
+        <div className="grid grid-cols-12 h-16 rounded-xl overflow-hidden mb-4 border border-border shadow-sm">
+          <div className="col-span-7 bg-gray-100 flex items-center justify-center text-xs font-bold text-gray-500">60% Màu chủ đạo</div>
+          <div className="col-span-4 bg-gray-800 flex items-center justify-center text-xs font-bold text-white">30% Màu phụ</div>
+          <div className="col-span-1 bg-accent flex items-center justify-center text-xs font-bold text-white">10%</div>
+        </div>
+        <ul className="list-disc list-inside space-y-2 mb-6 text-secondary bg-surface p-6 rounded-2xl">
+          <li><strong>60% Màu chủ đạo (Dominant Color):</strong> Thường là màu nền (background), màu trung tính. Nó tạo không gian nghỉ cho mắt.</li>
+          <li><strong>30% Màu phụ (Secondary Color):</strong> Dùng cho các thẻ (cards), header, footer. Nó hỗ trợ màu chủ đạo nhưng vẫn tạo sự khác biệt.</li>
+          <li><strong>10% Màu điểm nhấn (Accent Color):</strong> Dành cho nút bấm (CTA), link, thông báo quan trọng. Đây là nơi bạn muốn người dùng click vào.</li>
+        </ul>
+
+        <h2 className="text-2xl font-bold text-primary mt-12 mb-4">2. Các cách phối màu cơ bản</h2>
+        
+        <h3 className="text-lg font-bold text-primary mt-6 mb-2">Monochromatic (Đơn sắc)</h3>
+        <p className="text-secondary mb-4">
+          Sử dụng một màu gốc (Hue) và thay đổi độ đậm nhạt (Saturation/Brightness). Cách này an toàn nhất, tạo cảm giác chuyên nghiệp, sạch sẽ và không bao giờ lỗi mốt.
+        </p>
+        <div className="flex h-12 rounded-lg overflow-hidden mb-6">
+           <div className="flex-1 bg-blue-900"></div>
+           <div className="flex-1 bg-blue-700"></div>
+           <div className="flex-1 bg-blue-500"></div>
+           <div className="flex-1 bg-blue-300"></div>
+           <div className="flex-1 bg-blue-100"></div>
+        </div>
+
+        <h3 className="text-lg font-bold text-primary mt-6 mb-2">Analogous (Tương đồng)</h3>
+        <p className="text-secondary mb-4">
+          Sử dụng 3 màu nằm cạnh nhau trên vòng thuần sắc (ví dụ: Xanh lá - Xanh lam - Tím). Tạo cảm giác hài hòa, tự nhiên, thường thấy trong các ứng dụng về thiên nhiên hoặc thư giãn.
+        </p>
+
+        <h3 className="text-lg font-bold text-primary mt-6 mb-2">Complementary (Bổ túc)</h3>
+        <p className="text-secondary mb-4">
+          Sử dụng 2 màu đối diện nhau (ví dụ: Cam - Xanh dương). Tạo độ tương phản cực mạnh, gây sự chú ý cao. Dùng cẩn thận kẻo gây chói mắt.
+        </p>
+
+        <h2 className="text-2xl font-bold text-primary mt-12 mb-4">3. Tương phản và Tính tiếp cận (Accessibility)</h2>
+        <p className="text-secondary mb-4 leading-relaxed">
+          Đừng chỉ thiết kế cho người mắt sáng. Hãy nghĩ đến người già, người mù màu hay người dùng điện thoại ngoài trời nắng. Độ tương phản (Contrast) giữa chữ và nền là yếu tố sống còn.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+           <div className="bg-gray-200 p-6 rounded-xl flex items-center justify-center">
+              <span className="text-gray-400 font-bold text-xl">Low Contrast (Khó đọc)</span>
+           </div>
+           <div className="bg-primary p-6 rounded-xl flex items-center justify-center">
+              <span className="text-white font-bold text-xl">High Contrast (Dễ đọc)</span>
+           </div>
+        </div>
+        <p className="text-secondary mb-4">
+          Theo chuẩn WCAG, tỉ lệ tương phản tối thiểu nên là:
+        </p>
+        <ul className="list-disc list-inside space-y-2 mb-6 text-secondary">
+          <li><strong>4.5:1</strong> cho văn bản thường.</li>
+          <li><strong>3:1</strong> cho văn bản lớn (bold 18pt+).</li>
+        </ul>
+        <p className="text-secondary italic text-sm">
+          Tip: Sử dụng các plugin như "Contrast" trên Figma để kiểm tra tự động.
+        </p>
+
+        <h2 className="text-2xl font-bold text-primary mt-12 mb-4">4. Tâm lý học màu sắc</h2>
+        <p className="text-secondary mb-4 leading-relaxed">
+          Mỗi màu sắc gợi lên một cảm xúc khác nhau. Chọn sai màu có thể truyền tải sai thông điệp thương hiệu.
+        </p>
+        <div className="space-y-3">
+           <div className="flex items-start gap-3">
+              <div className="w-4 h-4 rounded-full bg-blue-500 mt-1 shrink-0"></div>
+              <p className="text-secondary text-sm"><strong>Xanh dương:</strong> Tin tưởng, an toàn, công nghệ (Ngân hàng, MXH, Tech).</p>
+           </div>
+           <div className="flex items-start gap-3">
+              <div className="w-4 h-4 rounded-full bg-red-500 mt-1 shrink-0"></div>
+              <p className="text-secondary text-sm"><strong>Đỏ:</strong> Năng lượng, khẩn cấp, đam mê (Đồ ăn, Sale, Cảnh báo).</p>
+           </div>
+           <div className="flex items-start gap-3">
+              <div className="w-4 h-4 rounded-full bg-green-500 mt-1 shrink-0"></div>
+              <p className="text-secondary text-sm"><strong>Xanh lá:</strong> Tăng trưởng, tiền bạc, sức khỏe (Tài chính, Y tế, Eco).</p>
+           </div>
+           <div className="flex items-start gap-3">
+              <div className="w-4 h-4 rounded-full bg-black mt-1 shrink-0"></div>
+              <p className="text-secondary text-sm"><strong>Đen/Trắng:</strong> Sang trọng, tối giản, cao cấp (Thời trang, Xe hơi).</p>
+           </div>
+        </div>
+
+        <h3 className="text-xl font-bold text-primary mt-8 mb-4">Lời khuyên cuối cùng</h3>
+        <p className="text-secondary leading-relaxed">
+          Đừng cố gắng dùng quá nhiều màu. Một UI đẹp thường chỉ cần 1 màu chủ đạo, 1 màu xám (cho text phụ) và 1 màu accent. Hãy bắt đầu đơn giản, và chỉ thêm màu khi thực sự cần thiết.
+        </p>
+      </>
+    )
+  },
   // Fallback content for demo purposes if user clicks other links
   'default': {
     title: 'Bài viết đang được cập nhật',

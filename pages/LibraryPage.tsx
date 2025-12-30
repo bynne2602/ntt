@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 interface Resource {
   id: string;
   title: string;
-  category: 'Development' | 'Design' | 'Tools' | 'Business';
+  category: 'Development' | 'Design' | 'Tools' | 'Business' | 'Ai';
   desc: string;
   url: string;
   date: string;
@@ -33,6 +33,18 @@ export const LibraryPage: React.FC = () => {
       author: 'Nguyễn Tân Thành',
       image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop',
       tags: ['AI Art', 'Midjourney', 'Design Tools']
+    },
+    {
+      id: 'prompt-engineering-101',
+      title: 'Prompt Engineering cơ bản cho người mới: Công thức làm chủ AI',
+      category: 'Ai',
+      desc: 'Hướng dẫn toàn diện về tư duy viết prompt, công thức R-T-C-F và cách tối ưu hóa kết quả từ ChatGPT, Gemini.',
+      url: '/library/prompt-engineering-101',
+      date: '25/05/2024',
+      readTime: '10 phút đọc',
+      author: 'Nguyễn Tân Thành',
+      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop',
+      tags: ['AI', 'Prompt Engineering', 'ChatGPT']
     },
     {
       id: '1',
@@ -87,7 +99,7 @@ export const LibraryPage: React.FC = () => {
       title: 'Nguyên lý màu sắc trong thiết kế UI',
       category: 'Design',
       desc: 'Hiểu về vòng thuần sắc, độ tương phản và cách phối màu chuyên nghiệp để tạo ra giao diện nịnh mắt người dùng.',
-      url: '#',
+      url: '/library/5',
       date: '10/04/2024',
       readTime: '12 phút đọc',
       author: 'Design Lab',
@@ -97,7 +109,7 @@ export const LibraryPage: React.FC = () => {
     {
       id: '6',
       title: 'Prompt Engineering: Giao tiếp với AI hiệu quả',
-      category: 'Tools',
+      category: 'Ai',
       desc: 'Kỹ thuật viết prompt để Gemini và ChatGPT trả về kết quả chính xác nhất. Tư duy logic khi làm việc với LLM.',
       url: '#',
       date: '01/04/2024',
