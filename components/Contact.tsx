@@ -13,7 +13,7 @@ export const Contact: React.FC = () => {
     const [showSuccess, setShowSuccess] = useState(false);
 
   const SCRIPT_URL =
-  'https://script.google.com/macros/s/AKfycbxOuPkyAPqlV1YSgZ4jrKliZa0zDk4fryJSZr_8kC9dpogfruEoWAMfCnU9NqI0B0Wf1Q/exec';
+  'https://script.google.com/macros/s/AKfycbxcW7jYZ7fbiIBp53m0Mruja8jvH6hVrob_BLEddEdn9AdFbRwykyDUS1PXiJETpbWtUw/exec';
 
 const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
