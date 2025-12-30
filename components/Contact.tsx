@@ -12,14 +12,21 @@ export const Contact: React.FC = () => {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
+  e.preventDefault();
+  setLoading(true);
 
-    try {
-      const body = JSON.stringify({ name, email, subject, message });
-      await fetch(
-        'https://script.google.com/macros/s/AKfycbzOOb0g0YqPwCMJ7ojZOYBGu0VSeEaegrZ8J0uZ-F6l1rXznWWtioC5yWAdZyUh-MIYLw/exec', // ← THAY URL NÀY
-        {
+  try {
+    const body = new URLSearchParams();
+    body.append('name', name);
+    body.append('email', email);
+    body.append('phone', phone); // ← DÒNG QUYẾT ĐỊNH
+    body.append('subject', subject);
+    body.append('message', message);
+    body.append('source', 'portfolio');
+
+    await fetch(
+      'https://script.google.com/macros/s/AKfycbzOOb0g0YqPwCMJ7ojZOYBGu0VSeEaegrZ8J0uZ-F6l1rXznWWtioC5yWAdZyUh-MIYLw/exec',
+      {
         method: 'POST',
         body,
       }
@@ -27,8 +34,10 @@ export const Contact: React.FC = () => {
 
     setName('');
     setEmail('');
+    setPhone('');
     setSubject('');
     setMessage('');
+
     alert('Gửi thành công!');
   } catch (err) {
     alert('Có lỗi xảy ra. Vui lòng thử lại.');
@@ -36,6 +45,7 @@ export const Contact: React.FC = () => {
     setLoading(false);
   }
 };
+
 
   return (
     <Section id="contact" className="bg-background">
@@ -117,13 +127,13 @@ export const Contact: React.FC = () => {
             </div>
 
             <input
-                type="tel"
-                placeholder="Số điện thoại"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                className="w-full bg-background border border-border rounded-lg px-4 py-4
-                text-black placeholder-black/40
-                focus:outline-none focus:border-accent transition"
+              type="tel"
+              placeholder="Số điện thoại"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              className="w-full bg-background border border-border rounded-lg px-4 py-4
+              text-black placeholder-black/40
+              focus:outline-none focus:border-accent transition"
             />
             <input
               type="text"
